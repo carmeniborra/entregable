@@ -1,0 +1,11 @@
+name: decontamination-env
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+  - nodefaults
+dependencies:
+  - cutadapt
+  - star
+  - seqkit
+prefix: /home/vant/miniforge3/envs/decontamination-env
