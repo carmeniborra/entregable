@@ -54,8 +54,8 @@ then
             wget -P "$dir" "$url" 
 
             #md5 esperado y calculado del archivo fasta sin descargarlo, y del archivo fasta descargado.
-            esp_md5=$(wget -qO- "$url.md5" | awk '{print $url}')
-            calc_md5=$(md5sum "$output_path" | awk '{print $url}')
+            esp_md5=$(wget -qO- "$url.md5" | awk '{print $1}')
+            calc_md5=$(md5sum "$output_path" | awk '{print $1}')
 
             # Comprobar si el md5sum es correcto
             if [ "$esp_md5" == "$calc_md5" ]
@@ -84,8 +84,8 @@ then
         wget -P "$dir" "$url" 
 
         #md5 esperado y calculado del archivo fasta sin descargarlo, y del archivo fasta descargado.
-        exp_md5=$(wget -qO- "$url.md5" | awk '{print $url}')
-        calc_md5=$(md5sum "$output_path" | awk '{print $url}')
+        exp_md5=$(wget -qO- "$url.md5" | awk '{print $1}')
+        calc_md5=$(md5sum "$output_path" | awk '{print $1}')
 
         # Comprobar si el md5sum es correcto
         if [ "$exp_md5" == "$calc_md5" ] #Comparamos el md5 esperado con el md5 calculado.
